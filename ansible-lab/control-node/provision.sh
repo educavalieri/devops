@@ -1,7 +1,7 @@
 #/bin/sh
-sudo yum -y install epel-release
+sudo yum install -y epel-release
 echo "ansible installing"
-sudo yum -y install ansible
+sudo yum install -y ansible
 cat <<EOT >> /etc/hosts
 192.168.1.2 control-node
 192.168.1.3 app01
