@@ -1,0 +1,29 @@
+-> editar arquivo:
+vi /etc/ansible/hosts
+
+[apps]
+app01
+[dbs]
+db01
+
+-> gerar chave para comunicação
+
+ssh-keygen
+cd ~/.ssh
+
+ansible -m ping all
+
+ansible-playbook db.yaml
+
+ansible-playbook db.yaml --check
+
+para rodar o mySQL:
+
+Ansible galaxy:
+https://galaxy.ansible.com/geerlingguy/mysql
+
+git hub vars:
+https://github.com/geerlingguy/ansible-role-mysql
+
+
+

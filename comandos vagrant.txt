@@ -1,0 +1,11 @@
+-> inicialização
+vagrant init
+
+-> para subir VM
+vagrant up
+
+-> para acessar maquina
+vagrant ssh
+
+-> para reload
+vagrant reload --provision
