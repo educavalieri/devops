@@ -7,8 +7,8 @@
 
   vars:
     - dbhost: "db01"
-    - dbname: "db01"
-    - dbusername: "root"
+    - dbname: "notes"
+    - dbusername: "notesapp"
     - dbpasword: "devopsmaonamassa"  
   tasks:
     - name: Configurar hosts lab Ansible
@@ -54,6 +54,10 @@
         dest: /opt/notes
         clone: yes
         force: yes
+    - name: Configurar arquivo pom.xml
+      template:
+        src: pom.xml
+        dest: /opt/notes/pom.xml
     - name: Configurar arquivo de propriedades para a camada de banco de dados
       template:
         src: application.properties
@@ -63,14 +67,17 @@
       become_user: app
     - name: Registrar versao atual do pacote
       shell:
-        cmd: /opt/apache-maven-3.1.0/bin/mvn -o -q -Dexec.executable=echo -Dexec.args='${project.version}' exec:exec
+        cmd: /opt/apache-maven-3.1.0/bin/mvn org.apache.maven.plugins:maven-help-plugin:2.1.1:evaluate -Dexpression=projec.version | grep -v '\['
         chdir: /opt/notes/
       register: app_version
     - name: Configurar Serviço do Systemd
       template:
         src: etc/systemd/system/notes.service
-        src: /etc/systemd/system/notes.service
-        notify: reload daemon
+        dest: /etc/systemd/system/notes.service
+        owner: root
+        group: root
+        mode: '0600'
+      notify: reload daemon
     - name: Iniciar Serviço notes
       service: 
         name: notes
