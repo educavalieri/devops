@@ -9,15 +9,15 @@
     - dbhost: "db01"
     - dbname: "notes"
     - dbusername: "notesapp"
-    - dbpasword: "devopsmaonamassa"  
+    - dbpassword: "devopsmaonamassa"
   tasks:
     - name: Adicionar usuario de app
       user:
         name: app
         comment: Usuario de aplicação
         uid: 500
-    - name: Donwload do Mavem versão x
-      get_url: 
+    - name: Donwload do maven 
+      get_url:
         url: https://repo.maven.apache.org/maven2/org/apache/maven/apache-maven/3.1.0/apache-maven-3.1.0-bin.tar.gz
         dest: /opt/apache-maven-3.1.0-bin.tar.gz
     - name: Unzip do pacote maven
@@ -29,8 +29,8 @@
       yum:
         name: java-1.8.0-openjdk
         state: latest
-    - name: Criação de diretório app
-      file: 
+    - name: Criação do diretório de app
+      file:
         path: /opt/notes
         state: directory
         owner: app
@@ -39,29 +39,29 @@
       yum:
         name: git
         state: latest
-    - name: Clone do repositório Notes -app
+    - name: Clone do repositório Notes - app
       git:
         repo: 'https://github.com/callicoder/spring-boot-mysql-rest-api-tutorial.git'
         dest: /opt/notes
         clone: yes
         force: yes
-    - name: Configurar arquivo pom.xml
+    - name: Configurar arquivo pom.xml com repositorios maven central
       template:
         src: pom.xml
         dest: /opt/notes/pom.xml
-    - name: Configurar arquivo de propriedades para a camada de banco de dados
+    - name: Configurar arquivo de propriedades para camada de banco de dados
       template:
         src: application.properties
         dest: /opt/notes/src/main/resources/application.properties
-    - name: Gerar pacotes da aplicação
-      command: /opt/apache-maven-3.1.0/bin/mvn -f/opt/notes/pom.xml package
+    - name: Gerar pacote da aplicação
+      command: /opt/apache-maven-3.1.0/bin/mvn -f /opt/notes/pom.xml package
       become_user: app
     - name: Registrar versao atual do pacote
       shell:
-        cmd: /opt/apache-maven-3.1.0/bin/mvn org.apache.maven.plugins:maven-help-plugin:2.1.1:evaluate -Dexpression=projec.version | grep -v '\['
+        cmd: /opt/apache-maven-3.1.0/bin/mvn org.apache.maven.plugins:maven-help-plugin:2.1.1:evaluate -Dexpression=project.version | grep -v '\['
         chdir: /opt/notes/
       register: app_version
-    - name: Configurar Serviço do Systemd
+    - name: Configurar serviço do Systemd
       template:
         src: etc/systemd/system/notes.service
         dest: /etc/systemd/system/notes.service
@@ -69,19 +69,18 @@
         group: root
         mode: '0600'
       notify: reload daemon
-    - name: Iniciar Serviço notes
-      service: 
+    - name: Iniciar serviço notes
+      service:
         name: notes
         state: restarted
   roles:
-    - configuracao-default-so
+      - configuracao-default-so
   handlers:
     - name: reload app
       systemd:
         state: restarted
+        daemon_reload: yes 
         name: 'notes'
     - name: reload daemon
       systemd:
         daemon_reexec: yes
-
-

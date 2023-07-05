@@ -9,3 +9,6 @@ vagrant ssh
 
 -> para reload
 vagrant reload --provision
+
+-> para desligar maquina
+vagrant halt
