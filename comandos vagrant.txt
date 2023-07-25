@@ -12,3 +12,6 @@ vagrant reload --provision
 
 -> para desligar maquina
 vagrant halt
+
+-> para apagar a maquina
+vagrant destroy
