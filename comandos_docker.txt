@@ -1,4 +1,10 @@
 docker build -t devops/notes .
 
-teste
+docker run -p 8080:8080 -d nomedaaplicacao
+
+docker logs nomedaaplicação
+
+docker network create devops
+docker network ls
+
 
