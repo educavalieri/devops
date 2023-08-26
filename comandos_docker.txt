@@ -1,10 +1,20 @@
+criar imagem a partir de Dockerfile:
 docker build -t devops/notes .
 
+criar instancia de imagem:
 docker run -p 8080:8080 -d nomedaaplicacao
 
 docker logs nomedaaplicação
 
+criar rede docker:
 docker network create devops
 docker network ls
 
+docker-compose a partir de docker-compose.yml:
+docker-compose up
+docker-compose down
+
+
+
+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
 
