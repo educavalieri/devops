@@ -1,6 +1,6 @@
 version: '3'
 services:
-  application/application:
+  application:
     build: .
     ports:
         - "8081:8080"
