@@ -3,6 +3,7 @@ pipeline {
     stages {
         stage('subir docker compose app'){
             steps{
+                sh'cd /vagrant'
                 sh 'docker-compose up -d'
             }
         }
