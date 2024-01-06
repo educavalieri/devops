@@ -6,9 +6,14 @@ pipeline {
                 sh 'docker stop java_application'
             }
         }
+        stage('deletar container'){
+            steps{
+                sh 'docker rm java_application'
+            }
+        }
         stage('deletar imagem'){
             steps{
-                sh 'docker rmi java-app_application'
+                sh 'docker rmi vagrant_application -f'
             }
         }
         stage('subir docker compose app'){

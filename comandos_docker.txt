@@ -2,7 +2,7 @@ criar imagem a partir de Dockerfile:
 docker build -t devops/notes .
 
 criar instancia de imagem:
-docker run -p 8080:8080 -d nomedaaplicacao
+docker run -p 8080:8080 -d --name nomedaAplicacao nomeDaImagen 
 
 docker logs nomedaaplicação
 
