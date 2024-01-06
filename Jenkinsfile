@@ -5,10 +5,12 @@ pipeline {
             steps{
                 sh 'docker stop java-app_application'
             }
+        }
         stage('deletar imagem'){
             steps{
                 sh 'docker rmi java-app_application'
             }
+        }
         stage('subir docker compose app'){
             steps{
                 sh 'docker-compose up -d'
