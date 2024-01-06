@@ -13,7 +13,7 @@ pipeline {
         }
         stage('deletar imagem'){
             steps{
-                sh 'docker rmi vagrant_application -f'
+                sh 'docker rmi java_image -f'
             }
         }
         stage('subir docker compose app'){
