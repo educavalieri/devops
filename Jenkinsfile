@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage('parar aplicacação java'){
             steps{
-                sh 'docker stop java-app_application'
+                sh 'docker stop java_application'
             }
         }
         stage('deletar imagem'){
