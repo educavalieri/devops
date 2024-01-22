@@ -1,0 +1,6 @@
+Para subir o nexus via docker:
+docker run -d -p 8091:8081 -p 8123:8123 --name nexus -v nexus-data:/nexus-data sonatype/nexus3
+
+docker logs -f nexus
+
+docker exec -it nexus bash

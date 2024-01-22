@@ -14,6 +14,9 @@ docker-compose a partir de docker-compose.yml:
 docker-compose up
 docker-compose down
 
+criar volume com o Docker:
+docker volume create --name nomeDoVolume
+
 
 
 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
