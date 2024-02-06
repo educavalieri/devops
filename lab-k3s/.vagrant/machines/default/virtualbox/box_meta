@@ -1,1 +1,1 @@
-{"name":"bento/centos-7","version":"202303.13.0","provider":"virtualbox","directory":"boxes/bento-VAGRANTSLASH-centos-7/202303.13.0/virtualbox"}
+{"name":"ubuntu/focal64","version":"20231207.0.0","provider":"virtualbox","directory":"boxes/ubuntu-VAGRANTSLASH-focal64/20231207.0.0/virtualbox"}

@@ -3,3 +3,12 @@
 
 verificação se está ativo
 kubectl get nodes
+
+kubectl get pods
+
+kubectl get deployment
+
+kubectl describe deployment name
+
+kubectl expose deployment name --type=LoadBalancer --name app-java --port=8081
+
