@@ -2,7 +2,7 @@ pipeline {
     environment {
         registry = "YourDockerhubAccount/YourRepository"
         registryCredential = 'dockerhub_id'
-        dockerImage = ''
+        dockerImage = 'educavalieri/java-application:1.0'
     }
     agent any
     
@@ -16,7 +16,7 @@ pipeline {
             steps{
                 script {
                     docker.withRegistry( '', registryCredential ) {
-                    educavalieri/java-application:1.0.push()
+                    dockerImage.push()
                     }
                 }
             }
