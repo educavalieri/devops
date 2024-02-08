@@ -2,7 +2,7 @@ pipeline {
     environment {
         registry = "YourDockerhubAccount/YourRepository"
         registryCredential = 'dockerhub_id'
-        dockerImage = 'educavalieri/java-application:1.0'
+        dockerImage = "educavalieri/java-application:1.0"
     }
     agent any
     
