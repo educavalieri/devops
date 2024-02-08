@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage('Criar imagem Docker java-application'){
             steps{
-                sh 'docker build -t educavalieri/java-application:1.0 -f docker/Dockerfile .'
+                sh 'docker build -t educavalieri/java-application:1.0 -f lab-k3s/docker/Dockerfile .'
             }
         }
     }
