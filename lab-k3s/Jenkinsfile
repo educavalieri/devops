@@ -1,29 +1,9 @@
 pipeline {
     agent any
     stages {
-        stage('parar aplicacação java'){
+        stage('Criar imagem Docker java-application'){
             steps{
-                sh 'docker stop java_application'
-            }
-        }
-        stage('deletar container'){
-            steps{
-                sh 'docker rm java_application'
-            }
-        }
-        stage('deletar imagem'){
-            steps{
-                sh 'docker rmi java_image -f'
-            }
-        }
-        stage('subir docker compose app'){
-            steps{
-                sh 'docker-compose up -d'
-            }
-        }
-        stage('sleep para subida de containers'){
-            steps{
-                sh 'sleep 10'
+                sh 'docker build -t ./docker/'
             }
         }
     }
