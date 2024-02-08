@@ -16,7 +16,7 @@ pipeline {
             steps{
                 script {
                     docker.withRegistry( '', registryCredential ) {
-                    dockerImage.push()
+                    sh 'docker image push educavalieri/java-application:1.0'
                     }
                 }
             }
