@@ -1,9 +1,24 @@
 pipeline {
+    environment {
+        registry = "YourDockerhubAccount/YourRepository"
+        registryCredential = 'dockerhub_id'
+        dockerImage = ''
+    }
     agent any
+    
     stages {
         stage('Criar imagem Docker java-application'){
             steps{
                 sh 'docker build -t educavalieri/java-application:1.0 -f lab-k3s/docker/Dockerfile .'
+            }
+        }    
+        stage('Deploy our image') {
+            steps{
+                script {
+                    docker.withRegistry( '', registryCredential ) {
+                    educavalieri/java-application:1.0.push()
+                    }
+                }
             }
         }
     }
