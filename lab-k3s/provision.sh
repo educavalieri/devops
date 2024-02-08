@@ -33,4 +33,5 @@ sudo apt-get install jenkins -y
 sudo usermod -a -G docker jenkins
 
 echo "Instalando K3s"
-curl -sfL https://get.k3s.io | sh -s - --Cluster-init --tls-san 192.168.1.2 --node-ip 192.168.1.2 --node-external-ip 192.168.1.2
+#curl -sfL https://get.k3s.io | sh -s - --Cluster-init --tls-san 192.168.1.2 --node-ip 192.168.1.2 --node-external-ip 192.168.1.2
+curl -sfL https://get.k3s.io | sh -
