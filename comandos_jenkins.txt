@@ -14,3 +14,6 @@ echo deb [signed-by=/usr/share/keyrings/jenkins-keyring.asc] \
 sudo apt-get update
 sudo apt-get install jenkins -y
 sudo usermod -a -G docker jenkins
+
+tutorial jenkins:
+https://www.youtube.com/watch?v=O6y27_Ol25g
