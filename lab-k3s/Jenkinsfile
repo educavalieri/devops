@@ -21,5 +21,11 @@ pipeline {
                 }
             }
         }
+        stage('Deploy Kubernets') {
+            steps{                
+                sh 'kubectl appl -f ./kubernets/pod.yml'
+                }
+            }
+        }
     }
 }
