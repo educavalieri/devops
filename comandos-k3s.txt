@@ -12,3 +12,7 @@ kubectl describe deployment name
 
 kubectl expose deployment name --type=LoadBalancer --name app-java --port=8081
 
+autorizar jenkins para usar o kubectl:
+cat /etc/rancher/k3s/k3s.yaml "copiar"
+colar no usuario jenkins "sudo su - jenkins"
+vi ~/.kube/config 
