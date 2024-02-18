@@ -23,7 +23,7 @@ pipeline {
         }
         stage('Deploy Kubernets') {
             steps{                
-                sh 'kubectl apply -f ./kubernets/pod.yml'
+                sh 'kubectl apply -f /kubernets/pod.yml'
             }
         }
     }

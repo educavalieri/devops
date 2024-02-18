@@ -1,0 +1,5 @@
+usermod:
+https://phoenixnap.com/kb/usermod-linux
+
+chmod:
+https://www.freecodecamp.org/news/linux-chmod-chown-change-file-permissions/
