@@ -1,8 +1,0 @@
-version: '3'
-services:
-  application:
-    build: .
-    image: java_image
-    container_name: java_application
-    ports:
-        - "8081:8080"

@@ -1,3 +1,7 @@
+Firewall:
+$ sudo ufw allow 8080
+$ sudo ufw status
+
 usermod:
 https://phoenixnap.com/kb/usermod-linux
 
