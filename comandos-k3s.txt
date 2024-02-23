@@ -18,3 +18,6 @@ autorizar jenkins para usar o kubectl:
 cat /etc/rancher/k3s/k3s.yaml "copiar"
 colar no usuario jenkins "sudo su - jenkins"
 vi ~/.kube/config 
+
+exemplo service:
+https://kubernetes.io/docs/tutorials/stateless-application/expose-external-ip-address/

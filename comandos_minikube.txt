@@ -1,0 +1,7 @@
+instalação:
+https://www.linuxbuzz.com/install-minikube-on-ubuntu/
+
+expor serviço:
+minikube service --url app-java-lb
+
+http://192.168.67.2:30699
