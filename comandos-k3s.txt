@@ -1,5 +1,6 @@
- instalação do k3s
- curl sfL https://get.k3s.io | sh -s - --cluster-init --tls-san 192.168.1.2 --node-ip 192.168.1.2 --node-external-ip 192.168.1.2
+instalação do k3s
+curl sfL https://get.k3s.io | sh -s - --cluster-init --tls-san 192.168.1.2 --node-ip 192.168.1.2 --node-external-ip 192.168.1.2
+curl -sfL https://get.k3s.io | sh -s - --node-external-ip 192.168.1.2
 
 verificação se está ativo
 kubectl get nodes
