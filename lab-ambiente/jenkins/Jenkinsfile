@@ -1,4 +1,4 @@
-    pipeline {
+pipeline {
     environment {
         registry = "YourDockerhubAccount/YourRepository"
         registryCredential = 'dockerhub_id'
