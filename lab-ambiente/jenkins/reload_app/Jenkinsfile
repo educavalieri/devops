@@ -1,0 +1,41 @@
+pipeline {
+    environment {
+        registry = "YourDockerhubAccount/YourRepository"
+        registryCredential = 'dockerhub_id'
+        dockerImage = "educavalieri/java-application:1.0"
+    }
+    agent any
+     stages {
+        stage('deletar deployment'){
+            steps{
+                sh 'kubectl delete deployment java-deployment'
+                sh 'kubectl delete service app-java'
+            }
+        }
+        stage('deletar imagem'){
+            steps{
+                sh 'docker rmi educavalieri/java-application:1.0 -f'
+            }
+        } 
+        stage('Criar imagem Docker java-application'){
+            steps{
+                sh 'docker build -t educavalieri/java-application:1.0 -f lab-ambiente/jenkins/docker/Dockerfile .'
+            }
+        }
+         
+        stage('Deploy our image') {
+            steps{
+                script {
+                    docker.withRegistry( '', registryCredential ) {
+                    sh 'docker image push educavalieri/java-application:1.0'
+                    }
+                }
+            }
+        }
+        stage('Deploy Kubernets') {
+            steps{                
+                sh 'kubectl apply -f lab-ambiente/jenkins/deploy/pod.yml'
+            }
+        }       
+    }
+}
