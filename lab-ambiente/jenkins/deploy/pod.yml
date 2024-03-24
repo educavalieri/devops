@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: app-java
-        image: educavalieri/app-java:1.0
+        image: educavalieri/app-java:latest
         ports:
         - containerPort: 8080
 ---
