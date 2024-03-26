@@ -1,0 +1,19 @@
+pipeline {
+    environment {
+        registry = "YourDockerhubAccount/YourRepository"
+        registryCredential = 'dockerhub_id'
+        dockerImage = "educavalieri/java-application:latest"
+    }
+    agent any
+    tools{
+        maven 'maven_3_9_6'
+    }
+     stages {
+        stage('Build Maven'){
+            steps{
+                checkout scmGit(branches: [[name: '*/main']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/educavalieri/application_devepos']])
+                sh mvn clean install
+            }
+        }          
+    }
+}
