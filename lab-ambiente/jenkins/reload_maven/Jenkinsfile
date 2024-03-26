@@ -31,6 +31,12 @@ pipeline {
                 }
             }
         }
+        stage('deletar deployment'){
+            steps{
+                sh 'kubectl delete deployment java-deployment-maven'
+                sh 'kubectl delete service app-java-maven'
+            }
+        }
         stage('Deploy Kubernets') {
             steps{                
                 sh 'kubectl apply -f deploy.yml'
