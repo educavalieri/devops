@@ -33,7 +33,7 @@ pipeline {
         }
         stage('Deploy Kubernets') {
             steps{                
-                sh 'kubectl apply -f lab-ambiente/jenkins/deploy/java-app-deploy.yml'
+                sh 'kubectl apply -f lab-ambiente/jenkins/deploy/pod.yml'
             }
         }                 
     }
