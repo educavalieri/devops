@@ -21,6 +21,20 @@ pipeline {
                     sh 'docker build -t educavalieri/application_dev .'
                 }
             }
-        }          
+        }
+        stage('Deploy our image') {
+            steps{
+                script {
+                    docker.withRegistry( '', registryCredential ) {
+                    sh 'docker image push educavalieri/application_dev'
+                    }
+                }
+            }
+        }
+        stage('Deploy Kubernets') {
+            steps{                
+                sh 'kubectl apply -f lab-ambiente/jenkins/deploy/java-app-deploy.yml'
+            }
+        }                 
     }
 }
