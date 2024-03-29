@@ -30,3 +30,9 @@ https://kubernetes.io/docs/tutorials/stateless-application/expose-external-ip-ad
 
 exemplo com Node Port "Funciona":
 https://berviantoleo.medium.com/setup-kubernetes-development-environment-using-vagrant-and-k3s-9d3273589c44
+
+exemplo de postgres deploy:
+https://www.digitalocean.com/community/tutorials/how-to-deploy-postgres-to-kubernetes-cluster
+
+Acessar o cluster postgres:
+sudo kubectl exec -it postgres-665b7554dc-td96v -- psql -h localhost -U ps_user --password -p 5432 ps_db
