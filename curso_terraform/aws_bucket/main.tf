@@ -9,7 +9,7 @@ terraform {
 }
 
 provider "aws" {
-  region = "sa-east-1"
+  region = var.location
 
   default_tags {
     tags = {

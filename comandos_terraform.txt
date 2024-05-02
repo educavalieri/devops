@@ -1,3 +1,8 @@
 terraform init
 terraform plan
+terraform plan -out plan.out
+terraform show plan.out
 terraform apply
+terraform apply -destroy
+terraform destroy
+terraform apply plan.out
