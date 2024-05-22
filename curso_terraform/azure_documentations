@@ -1,0 +1,6 @@
+azure storage account:
+https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs
+https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/guides/features-block
+https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/storage_account
+https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/storage_container
+https://learn.microsoft.com/en-us/azure/reliability/availability-zones-service-support
