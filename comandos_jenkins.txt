@@ -16,3 +16,6 @@ https://www.youtube.com/watch?v=O6y27_Ol25g
 
 tutorial jenkins -> dockerHub
 https://gcore.com/learning/building-docker-images-to-docker-hub-using-jenkins-pipelines/
+
+para rodar a app utilizando o jenkins e o maven:
+https://www.youtube.com/watch?v=PKcGy9oPVXg
