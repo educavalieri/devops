@@ -11,6 +11,11 @@ sudo apt-get update
 sudo apt-get install jenkins -y
 sudo usermod -a -G docker jenkins
 
+instalar kubectl no jenkins:
+https://kubernetes.io/docs/tasks/tools/install-kubectl-linux/
+curl -LO "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl"
+
+
 tutorial jenkins:
 https://www.youtube.com/watch?v=O6y27_Ol25g
 
@@ -19,3 +24,6 @@ https://gcore.com/learning/building-docker-images-to-docker-hub-using-jenkins-pi
 
 para rodar a app utilizando o jenkins e o maven:
 https://www.youtube.com/watch?v=PKcGy9oPVXg
+
+pipeline jenkins opções:
+https://www.jenkins.io/doc/book/pipeline/syntax/
