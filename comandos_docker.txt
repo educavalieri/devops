@@ -17,7 +17,12 @@ docker-compose down
 criar volume com o Docker:
 docker volume create --name nomeDoVolume
 
-
-
 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
+
+aula docker:
+https://www.youtube.com/watch?v=71C3yDivCdA&t=2s
+
+aulão ao vidvo docker:
+https://www.youtube.com/live/-Xce7BsyAt0
+
 

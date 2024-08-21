@@ -36,3 +36,6 @@ https://www.digitalocean.com/community/tutorials/how-to-deploy-postgres-to-kuber
 
 Acessar o cluster postgres:
 sudo kubectl exec -it postgres-665b7554dc-td96v -- psql -h localhost -U ps_user --password -p 5432 ps_db
+
+aula kubernetes:
+https://www.youtube.com/watch?v=GrPFTnoZLcc
